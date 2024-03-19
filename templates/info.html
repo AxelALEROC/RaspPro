@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/assets/raspicon.svg" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="nav container container--hero">
+
+        <a href="{{ url_for('home') }}">
+            <img src="/static/assets/raspicon.svg" class="nav__logo">
+        </a>
+
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="{{ url_for('home') }}#nosotros" class="nav__link">Sobre Nosotros</a>
+            </li>
+            <li class="nav__item">
+                <a href="{{ url_for('home') }}#pagina" class="nav__link">¿Qué me voy a encontrar esta página?</a>
+            </li>
+            <li class="nav__item">
+                <a href="{{ url_for('home') }}#footer" class="nav__link">Contacto</a>
+            </li>
+        </ul>
+        <img src="/static/assets/menu.svg" class="nav__menu">
+
+    </nav>
+
+
+    <section class="controller">
+
+        <div class="controller__container container">
+            <article class="controller__item">
+
+                <h3 class="controller__title">MOVIMIENTOS</h3>
+                <p class="paragraph">Este es el controlador principal del brazo mecánico, el cual usa sliders
+                    para calcular el valor que envía directamente al servomotor.
+                </p>
+                
+                <br/>
+                <br/>
+                <br/>
+
+                <form method="POST" action="{{ url_for('actualizar') }}">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="miSlider" name="valor">
+                    <input type="submit" value="Enviar">
+                </form>
+
+            </article>
+        </div>
+
+    </section>
+    <script src="../js/app.js"></script>
+</body>
+</html>
