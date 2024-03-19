@@ -12,7 +12,10 @@ def info():
 
 @app.route('/actualizar', methods=['POST'])
 def actualizar():
-    valor = request.form['valor']
+    valor = request.form['slider1']
+    valor = request.form['slider2']
+    valor = request.form['slider3']
+    valor = request.form['slider4']
     return 'Valor recibido: ' + valor
 
 if __name__ == '__main__':
